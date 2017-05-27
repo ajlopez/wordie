@@ -30,3 +30,16 @@ exports['add'] = function (test) {
 	test.ok(mach.empty());
 };
 
+exports['dup'] = function (test) {
+	var mach = machine();
+	
+	mach.push(1);
+	mach.dup();
+
+	test.equal(mach.empty(), false);
+	
+	test.equal(mach.pop(), 1);
+	test.equal(mach.pop(), 1);
+	
+	test.ok(mach.empty());
+};
