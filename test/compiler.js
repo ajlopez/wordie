@@ -29,3 +29,6 @@ exports['compile number 0'] = function (test) {
 	test.equal(compiler.compile('the number is'), 'machine.push(0)');
 };
 
+exports['compile number 42'] = function (test) {
+	test.equal(compiler.compile('next night starts late'), 'machine.push(42)');
+};
