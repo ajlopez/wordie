@@ -43,3 +43,15 @@ exports['dup'] = function (test) {
 	
 	test.ok(mach.empty());
 };
+
+exports['get'] = function (test) {
+	var mach = machine();
+	
+	mach.push(Math);
+	mach.push("PI");
+	mach.get();
+	
+	test.equal(mach.pop(), Math.PI);
+	
+	test.ok(mach.empty());
+};
