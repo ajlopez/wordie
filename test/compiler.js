@@ -53,3 +53,11 @@ exports['compile modulus operation'] = function (test) {
 	test.equal(compiler.compile('An overconfident person'), 'machine.modulus()');
 };
 
+exports['compile store operation'] = function (test) {
+	test.equal(compiler.compile('The tree is yellow'), 'machine.store()');
+};
+
+exports['compile load operation'] = function (test) {
+	test.equal(compiler.compile('The loan was canceled'), 'machine.load()');
+};
+
