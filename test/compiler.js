@@ -21,5 +21,11 @@ exports['compile string'] = function (test) {
 	test.equal(compiler.compile('a solid high elevator lifts light oxen'), 'machine.push("hello")');
 };
 
+exports['compile number 1'] = function (test) {
+	test.equal(compiler.compile('the number one'), 'machine.push(1)');
+};
 
+exports['compile number 0'] = function (test) {
+	test.equal(compiler.compile('the number is'), 'machine.push(0)');
+};
 
