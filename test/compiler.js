@@ -74,6 +74,9 @@ exports['compile print operation'] = function (test) {
 };
 
 exports['compile word'] = function (test) {
-	test.equal(compiler.compile("Don't worry, Mary, a tea hesitated"), 'machine.push(Math)');
+	test.equal(compiler.compile("Don't worry, Mary, about the hurricane"), 'machine.push(Math)');
 };
 
+exports['compile dup'] = function (test) {
+	test.equal(compiler.compile("The upper side is far"), 'machine.dup()');
+};
