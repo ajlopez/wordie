@@ -37,3 +37,6 @@ exports['compile add operation'] = function (test) {
 	test.equal(compiler.compile('the add operation'), 'machine.add()');
 };
 
+exports['compile subtract operation'] = function (test) {
+	test.equal(compiler.compile('the bus is arriving'), 'machine.subtract()');
+};
