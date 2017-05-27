@@ -69,3 +69,11 @@ exports['compile set operation'] = function (test) {
 	test.equal(compiler.compile('Nobody expected a disaster'), 'machine.set()');
 };
 
+exports['compile print operation'] = function (test) {
+	test.equal(compiler.compile('The king is dead'), 'console.log(machine.pop())');
+};
+
+exports['compile word'] = function (test) {
+	test.equal(compiler.compile("Don't worry, Mary, a tea hesitated"), 'machine.push(Math)');
+};
+
