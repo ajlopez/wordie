@@ -96,3 +96,8 @@ exports['compile close brace'] = function (test) {
 exports['compile while'] = function (test) {
 	test.equal(compiler.compile("A young man died"), 'while (machine.pop()) {');
 };
+
+exports['compile return'] = function (test) {
+	test.equal(compiler.compile("The return of pain"), 'return machine.pop()');
+};
+
