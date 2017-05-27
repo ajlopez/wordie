@@ -119,3 +119,26 @@ exports['compile multiline text'] = function (test) {
 	
 	test.equal(compiler.compile(text), expected);
 };
+
+exports['compile multiline text with braces'] = function (test) {
+	var text = [
+		"the island has many treasures",
+		"the number one",
+		"the nightly moon",
+		"are all brigth",
+		"in rare sky",
+		"a hollow day"
+	].join('\r\n');
+	
+	var expected = [
+		'if (machine.pop()) {',
+		'machine.push(1);',
+		'machine.push(2);',
+		'machine.add();',
+		'return machine.pop();',
+		'}'
+	].join(' ');
+	
+	
+	test.equal(compiler.compile(text), expected);
+};
