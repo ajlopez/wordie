@@ -84,3 +84,11 @@ exports['compile word'] = function (test) {
 exports['compile dup'] = function (test) {
 	test.equal(compiler.compile("The upper side is far"), 'machine.dup()');
 };
+
+exports['compile if'] = function (test) {
+	test.equal(compiler.compile("An island wake up"), 'if (machine.pop()) {');
+};
+
+exports['compile close brace'] = function (test) {
+	test.equal(compiler.compile("the high level"), '}');
+};
