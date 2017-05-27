@@ -55,3 +55,17 @@ exports['get'] = function (test) {
 	
 	test.ok(mach.empty());
 };
+
+exports['set'] = function (test) {
+	var mach = machine();
+	var obj = {};
+	
+	mach.push("Adam");
+	mach.push(obj);
+	mach.push("name");
+	mach.set();
+	
+	test.equal(obj.name, "Adam");
+
+	test.ok(mach.empty());
+};
