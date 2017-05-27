@@ -45,6 +45,11 @@ exports['compile multiply operation'] = function (test) {
 	test.equal(compiler.compile('a man small step'), 'machine.multiply()');
 };
 
-exports['compile multiply operation'] = function (test) {
+exports['compile divide operation'] = function (test) {
 	test.equal(compiler.compile('the division is here'), 'machine.divide()');
 };
+
+exports['compile modulus operation'] = function (test) {
+	test.equal(compiler.compile('An overconfident person'), 'machine.modulus()');
+};
+
