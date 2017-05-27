@@ -92,3 +92,7 @@ exports['compile if'] = function (test) {
 exports['compile close brace'] = function (test) {
 	test.equal(compiler.compile("the high level"), '}');
 };
+
+exports['compile while'] = function (test) {
+	test.equal(compiler.compile("A young man died"), 'while (machine.pop()) {');
+};
