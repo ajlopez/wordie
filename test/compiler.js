@@ -61,3 +61,11 @@ exports['compile load operation'] = function (test) {
 	test.equal(compiler.compile('The loan was canceled'), 'machine.load()');
 };
 
+exports['compile get operation'] = function (test) {
+	test.equal(compiler.compile('A goat escaped'), 'machine.get()');
+};
+
+exports['compile set operation'] = function (test) {
+	test.equal(compiler.compile('Nobody expected a disaster'), 'machine.set()');
+};
+
