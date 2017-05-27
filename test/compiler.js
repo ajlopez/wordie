@@ -101,3 +101,21 @@ exports['compile return'] = function (test) {
 	test.equal(compiler.compile("The return of pain"), 'return machine.pop()');
 };
 
+exports['compile multiline text'] = function (test) {
+	var text = [
+		"the number one",
+		"the nightly moon",
+		"are all brigth",
+		"in rare sky"
+	].join('\r\n');
+	
+	var expected = [
+		'machine.push(1);',
+		'machine.push(2);',
+		'machine.add();',
+		'return machine.pop();'
+	].join(' ');
+	
+	
+	test.equal(compiler.compile(text), expected);
+};
