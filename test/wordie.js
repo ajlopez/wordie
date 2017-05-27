@@ -1,5 +1,6 @@
 
 var wordie = require('..');
+var path = require('path');
 
 exports['wordie as object'] = function (test) {
 	test.ok(wordie);
@@ -15,5 +16,9 @@ exports['execute a simple program'] = function (test) {
 	].join('\r\n');
 
 	test.equal(wordie.execute(text), 3);
+};
+
+exports['execute a file'] = function (test) {
+	test.equal(wordie.executeFile(path.join(__dirname, 'three.wrd')), 3);
 };
 
