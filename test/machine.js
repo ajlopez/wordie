@@ -69,3 +69,18 @@ exports['set'] = function (test) {
 
 	test.ok(mach.empty());
 };
+
+exports['store and load'] = function (test) {
+	var mach = machine();
+	
+	mach.push(42);
+	mach.push("answer");
+	mach.store();
+	
+	mach.push("answer");
+	mach.load();
+	
+	test.equal(mach.pop(), 42);
+
+	test.ok(mach.empty());
+};
