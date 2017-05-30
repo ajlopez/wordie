@@ -84,3 +84,18 @@ exports['store and load'] = function (test) {
 
 	test.ok(mach.empty());
 };
+
+exports['apply'] = function (test) {
+	var mach = machine();
+	
+	mach.push(42);
+	mach.push(1);
+	mach.push(Math);
+	mach.push(Math.sin);
+	mach.apply();
+	mach.load();
+	
+	test.equal(mach.pop(), Math.sin(42));
+
+	test.ok(mach.empty());
+};
