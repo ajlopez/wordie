@@ -93,7 +93,6 @@ exports['apply'] = function (test) {
 	mach.push(Math);
 	mach.push(Math.sin);
 	mach.apply();
-	mach.load();
 	
 	test.equal(mach.pop(), Math.sin(42));
 
