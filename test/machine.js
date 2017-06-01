@@ -98,3 +98,18 @@ exports['apply'] = function (test) {
 
 	test.ok(mach.empty());
 };
+
+exports['apply with argument order'] = function (test) {
+	var mach = machine();
+	
+	mach.push(2);
+	mach.push(1);
+	mach.push(2);
+	mach.push(null);
+	mach.push(function (a, b) { return a - b; });
+	mach.apply();
+	
+	test.equal(mach.pop(), 1);
+
+	test.ok(mach.empty());
+};
