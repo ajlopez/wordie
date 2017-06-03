@@ -101,6 +101,10 @@ exports['compile return'] = function (test) {
 	test.equal(compiler.compile("The return of pain"), 'return machine.pop()');
 };
 
+exports['compile apply'] = function (test) {
+	test.equal(compiler.compile("The apple is red"), 'machine.apply()');
+};
+
 exports['compile multiline text'] = function (test) {
 	var text = [
 		"the number one",
